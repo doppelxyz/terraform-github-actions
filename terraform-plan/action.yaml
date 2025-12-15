@@ -128,6 +128,10 @@ outputs:
     description: |
       The URL of the GitHub PR comment that was created or updated with the plan.
       This will only be set if a comment was created (i.e., when running on a pull request with add_github_comment enabled).
+  comment_id:
+    description: |
+      The ID of the GitHub PR comment that was created or updated with the plan.
+      This will only be set if a comment was created (i.e., when running on a pull request with add_github_comment enabled).
 
 runs:
   using: docker

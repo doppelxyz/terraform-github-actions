@@ -545,6 +545,11 @@ def main() -> int:
 
         if comment.comment_url:
             output('comment_url', comment.comment_url)
+            # Extract comment ID from API URL (format: https://api.github.com/repos/owner/repo/issues/comments/123456)
+            import re
+            match = re.search(r'/comments/(\d+)$', comment.comment_url)
+            if match:
+                output('comment_id', match.group(1))
 
     elif sys.argv[1] == 'status':
         if comment.comment_url is None:
