@@ -1,5 +1,8 @@
-# hadolint ignore=DL3007
-FROM danielflook/terraform-github-actions-base:latest
+# Pinned by digest: the mutable :latest tag changed under us on 2026-07-18
+# (Debian 12 -> Debian 13 / Python 3.13) and silently broke the action.
+# This digest is the Debian 13 / Python 3.13 image. To bump, update the
+# digest deliberately and rebuild/test the image.
+FROM danielflook/terraform-github-actions-base:latest@sha256:a5d58028e43a568e4133204caf9e4af67a0d1f98d1d4e7a5d5c391040fbd699a
 
 ARG TARGETARCH
 
